@@ -1,15 +1,16 @@
-import { View, Text, Image, StyleSheet } from 'react-native'
+import { View, Text, Image, StyleSheet, ViewStyle } from 'react-native'
 import React from 'react'
 import { LocationType } from '../types'
 
 
 type Props = {
-    item: LocationType
+    item: LocationType,
+    containerStyle: ViewStyle
 }
 
-const LocationItem = ({ item }: Props) => {
+const LocationItem = ({ item, containerStyle }: Props) => {
     return (
-        <View style={[{ borderTopLeftRadius: 20, borderBottomLeftRadius: 20, position: 'absolute', bottom: 50, flexDirection: 'row', backgroundColor: 'white', marginHorizontal: 15 }, style.shadowStyle]}>
+        <View style={[containerStyle, style.shadowStyle]}>
             <Image style={{ width: 180, aspectRatio: 1, borderTopLeftRadius: 20, borderBottomLeftRadius: 20, }} source={{ uri: item.image }}></Image>
             <View style={{ padding: 10, flex: 1 }}>
                 <View style={{ flex: 1 }}>
